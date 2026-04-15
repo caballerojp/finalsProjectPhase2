@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reviews</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<nav>
+  <div class="nav-left">
+    <img src="Logo.jpg" class="logo">
+    <span class="site-name">Baguio Guide</span>
+  </div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="map.html">Map</a>
+    <a href="review.html">Reviews</a>
+  </div>
+</nav>
+
+
+<div class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">✦ Travel Guide</span>
+    <h1>The City of <em>Pines</em> Awaits You</h1>
+    <p>Nestled in the Cordillera mountains at 1,500 meters above sea level,
+      Baguio City offers cool breezes, lush pine forests, and a rich tapestry of culture and nature to explore.</p>
+    <div class="hero-stats">
+      <div><strong>1,500m</strong><br>Elevation</div>
+      <div><strong>18°C</strong><br>Avg. Temp</div>
+      <div><strong>50+</strong><br>Attractions</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Leave a Review</h1>
+
+  <form onsubmit="submitReview(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Your name">
+
+    <label for="place">Place Visited:</label>
+    <select id="place">
+      <option value="">-- Select a place --</option>
+      <option value="Night Market">Night Market</option>
+      <option value="Burnham Park">Burnham Park</option>
+      <option value="Mines View Park">Mines View Park</option>
+      <option value="Camp John Hay">Camp John Hay</option>
+      <option value="Botanical Garden">Botanical Garden</option>
+      <option value="Strawberry Farm">Strawberry Farm</option>
+      <option value="BenCab Museum">BenCab Museum</option>
+      <option value="Wright Park">Wright Park</option>
+    </select>
+
+   
+    <input type="hidden" id="stars" value="0">
+
+    <label for="review">Review:</label>
+    <textarea id="review" rows="4" placeholder="Share your experience..."></textarea>
+
+    <button type="submit">Submit Review</button>
+  </form>
+
+  <h2>Recent Reviews</h2>
+  <div id="reviews-list">
+
+
+    
+
+  </div>
+</div>
+
+<div class="success-overlay" id="successOverlay"></div>
+<div class="success-prompt" id="successPrompt">
+  <h3>Review Submitted!</h3>
+  <p>✅ Thank you for sharing your feedback.</p>
+  <button onclick="closeSuccessPrompt()">OK</button>
+</div>
+
+
+<footer>
+  <p>&copy; 2026 Travel Guide | Baguio City Tourism</p>
+  <p>
+    <a href="https://www.baguio.gov.ph" target="_blank">Official Baguio Website</a> |
+    <a href="#">Back to Top</a>
+  </p>
+</footer>
+
+<script>
+  var currentRating = 0;
+    const form = document.querySelector('form');
+    const overlay = document.getElementById('successOverlay');
+    const promptBox = document.getElementById('successPrompt');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    overlay.style.display = 'block';
+    promptBox.style.display = 'block';
+});
+
+  function closeSuccessPrompt() {
+    overlay.style.display = 'none';
+    promptBox.style.display = 'none';
+}
+
+
+  
+
+  function submitReview(e) {
+    e.preventDefault();
+
+    var name = document.getElementById('name').value.trim();
+    var place = document.getElementById('place').value;
+    var review = document.getElementById('review').value.trim();
+
+    if (!name || !place || !review) {
+      alert('Please fill in all fields!');
+      return;
+    }
+
+  
+    var starStr = '';
+    for (var i = 0; i < stars; i++) {
+      starStr += '⭐';
+    }
+
+
+    var card = document.createElement('div');
+    card.className = 'review-card new-review';
+    card.innerHTML =
+      '<div class="review-header">' +
+        '<span class="review-name">' + name + '</span>' +
+        '<span class="review-place">📍 ' + place + '</span>' +
+      '</div>' +
+      '<p>' + review + '</p>';
+
+   
+    var list = document.getElementById('reviews-list');
+    list.insertBefore(card, list.firstChild);
+
+   
+    document.getElementById('name').value = '';
+    document.getElementById('place').value = '';
+    document.getElementById('review').value = '';
+    document.getElementById('stars').value = '0';
+    setRating(0);
+
+    alert('Thank you for your review!');
+  }
+</script>
+
+</body>
+</html>

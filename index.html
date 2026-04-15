@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baguio Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<nav>
+  <div class="nav-left">
+    <img src="Logo.jpg" class="logo">
+    <span class="site-name">Baguio Guide</span>
+  </div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="map.html">Map</a>
+    <a href="review.html">Reviews</a>
+  </div>
+</nav>
+
+
+<div class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">✦ Travel Guide</span>
+    <h1>The City of <em>Pines</em> Awaits You</h1>
+    <p>
+      Nestled in the Cordillera mountains at 1,500 meters above sea level,
+      Baguio City offers cool breezes, lush pine forests, and a rich tapestry of culture and nature to explore.
+    </p>
+    <div class="hero-stats">
+      <div><strong>1,500m</strong><br>Elevation</div>
+      <div><strong>18°C</strong><br>Avg. Temp</div>
+      <div><strong>50+</strong><br>Attractions</div>
+    </div>
+  </div>
+</div>
+
+<h2>Top Attractions in Baguio</h2>
+
+<div class="cards">
+
+  
+  <div class="card" onclick="openModal('nightmarket')">
+    <img src="night.jpg" alt="Night Market">
+    <div class="card-content">
+      <h3>Night Market</h3>
+      <p>----------------</p>
+      <p>The Baguio Night Market is famous along Harrison Road.</p>
+    </div>
+  </div>
+
+ 
+  <div class="card" onclick="openModal('burnham')">
+    <img src="burn.png" alt="Burnham Park">
+    <div class="card-content">
+      <h3>Burnham Park</h3>
+      
+      <p>A relaxing park with a lagoon and greenery.</p>
+    </div>
+  </div>
+
+
+  <div class="card" onclick="openModal('mines')">
+    <img src="mines.jpg" alt="Mines View Park">
+    <div class="card-content">
+      <h3>Mines View Park</h3>
+      
+      <p>Famous for mountain views and scenic landscapes.</p>
+    </div>
+  </div>
+
+
+  <div class="card" onclick="openModal('campjohnhay')">
+    <img src="camp.jpg" alt="Camp John Hay">
+    <div class="card-content">
+      <h3>Camp John Hay</h3>
+      
+      <p>Great for nature walks and relaxing trails.</p>
+    </div>
+  </div>
+
+
+  <div class="card" onclick="openModal('botanical')">
+    <img src="botanical.jpeg" alt="Botanical Garden">
+    <div class="card-content">
+      <h3>Botanical Garden</h3>
+      
+      <p>A serene garden showcasing local flora and Igorot culture.</p>
+    </div>
+  </div>
+
+  
+  <div class="card" onclick="openModal('strawberry')">
+    <img src="strawberry.jpg" alt="Strawberry Farm">
+    <div class="card-content">
+      <h3>Strawberry Farm</h3>
+      
+      <p>Pick fresh strawberries at La Trinidad Valley farm.</p>
+    </div>
+  </div>
+
+ 
+  <div class="card" onclick="openModal('bencab')">
+    <img src="bencab.jpg" alt="BenCab Museum">
+    <div class="card-content">
+      <h3>BenCab Museum</h3>
+      
+      <p>World-class art museum by National Artist Ben Cabrera.</p>
+    </div>
+  </div>
+
+  
+  <div class="card" onclick="openModal('wright')">
+    <img src="wright.jpg" alt="Wright Park">
+    <div class="card-content">
+      <h3>Wright Park</h3>
+      
+      <p>Horse riding and pine-tree lined paths near The Mansion.</p>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+
+
+<div class="modal" id="modal-nightmarket">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="night.jpg" alt="Night Market">
+  <h2>Baguio Night Market</h2>
+
+  <p><strong>Location:</strong> Harrison Road, Baguio City</p>
+  <p><strong>Open:</strong> Every night, 10:00 PM – 2:00 AM</p>
+  <p><strong>About:</strong> The Baguio Night Market stretches along Harrison Road and is one of the most beloved local experiences in the city. You'll find secondhand clothes (ukay-ukay), local street food like taho, kwek-kwek, and isaw, as well as handcrafted souvenirs and accessories at very affordable prices. It's lively, colorful, and full of local charm.</p>
+  <p><strong>Tips:</strong> Bring cash, wear comfortable shoes, and arrive early to get the best picks. Watch your belongings in the crowd.</p>
+  <a href="map.html?spot=nightmarket" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-burnham">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="burn.png" alt="Burnham Park">
+  <h2>Burnham Park</h2>
+
+  <p><strong>Location:</strong> Jose Abad Santos Drive, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 5:00 AM – 9:00 PM</p>
+  <p><strong>About:</strong> Burnham Park is the central park of Baguio City, designed by American architect Daniel Burnham. It features a man-made lagoon where visitors can rent boats, a flower garden, rose garden, bike rentals, and open picnic areas. It's a favorite of both locals and tourists for morning jogs and family outings.</p>
+  <p><strong>Tips:</strong> Rent a bike and ride around the park. Visit the Rose Garden in the morning when flowers are freshest.</p>
+  <a href="map.html?spot=burnham" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-mines">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="mines.jpg" alt="Mines View Park">
+  <h2>Mines View Park</h2>
+
+  <p><strong>Location:</strong> Mines View, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 6:00 PM</p>
+  <p><strong>About:</strong> Mines View Park overlooks the old mining town of Itogon and the Cordillera mountain range. The park is lined with souvenir shops selling woodcrafts, silver jewelry, and Baguio ref magnets. Visitors can also dress up in traditional Igorot attire and take photos. On clear days, the mountain view is absolutely stunning.</p>
+  <p><strong>Tips:</strong> Go early in the morning for the clearest views before the mist rolls in. Bargain politely at the souvenir stalls.</p>
+  <a href="map.html?spot=mines" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-campjohnhay">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="camp.jpg" alt="Camp John Hay">
+  <h2>Camp John Hay</h2>
+
+  <p><strong>Location:</strong> Camp John Hay, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 10:00 PM</p>
+  <p><strong>About:</strong> Camp John Hay is a former American military rest and recreation facility now transformed into a forest reserve and leisure destination. It features pine-forested trails, a golf course, the historical Bell House, restaurants, and a cemetery of negativism. It's one of the best places to breathe fresh pine air and enjoy nature walks.</p>
+  <p><strong>Tips:</strong> The forest trails are free to walk. Grab a coffee at one of the cafes inside and enjoy the cool air surrounded by tall pine trees.</p>
+  <a href="map.html?spot=campjohnhay" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-botanical">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="botanical.jpeg" alt="Botanical Garden">
+  <h2>Botanical Garden</h2>
+ 
+  <p><strong>Location:</strong> Leonard Wood Road, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 6:00 PM | Free Entrance</p>
+  <p><strong>About:</strong> Baguio's Botanical Garden is a peaceful green space that celebrates both the natural beauty of the region and the indigenous Igorot culture. You can find life-sized Igorot village displays, native plant collections, and quiet walking paths. Traditional dances are sometimes performed here for visitors.</p>
+  <p><strong>Tips:</strong> Entrance is free! It's a great stop for a quiet morning walk. Look for the native huts that demonstrate traditional mountain province architecture.</p>
+  <a href="map.html?spot=botanical" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-strawberry">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="strawberry.jpg" alt="Strawberry Farm">
+  <h2>Strawberry Farm</h2>
+  <p class="modal-rating">⭐ 4.5 / 5.0</p>
+  <p><strong>Location:</strong> La Trinidad, Benguet (near Baguio)</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 5:00 PM</p>
+  <p><strong>About:</strong> The La Trinidad Strawberry Farm is one of the most popular side trips from Baguio City. Visitors can walk through rows of strawberry plants and pick their own fresh berries. Strawberry jam, taho, and fresh strawberry juice are sold on site. The farm is especially lush from December to May.</p>
+  <p><strong>Tips:</strong> The picking season peaks from January to March. Wear shoes you don't mind getting muddy and bring a small container for your picks.</p>
+  <a href="map.html?spot=strawberry" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-bencab">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="bencab.jpg" alt="BenCab Museum">
+  <h2>BenCab Museum</h2>
+  <p class="modal-rating">⭐ 4.8 / 5.0</p>
+  <p><strong>Location:</strong> Asin Road, Tuba, Benguet (near Baguio)</p>
+  <p><strong>Open:</strong> Tuesday – Sunday, 9:00 AM – 6:00 PM</p>
+  <p><strong>About:</strong> The BenCab Museum is a world-class art museum dedicated to the works of National Artist Benedicto Cabrera (BenCab) and other Filipino artists. The museum is built into a hillside surrounded by lush gardens and a small lake. It also features a café with a scenic view and an indigenous art collection. It's one of the top cultural destinations in the Philippines.</p>
+  <p><strong>Tips:</strong> Allow at least 2–3 hours to fully explore. The outdoor garden and lake area are just as beautiful as the galleries inside.</p>
+  <a href="map.html?spot=bencab" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-wright">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="wright.jpg" alt="Wright Park">
+  <h2>Wright Park</h2>
+  <p class="modal-rating">⭐ 4.0 / 5.0</p>
+  <p><strong>Location:</strong> Gibraltar Road, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 6:00 PM</p>
+  <p><strong>About:</strong> Wright Park is a wide open field famous for horseback riding, located right beside The Mansion — the official summer residence of the Philippine President. The park features a long reflecting pool lined with tall pine trees, making it one of the most scenic spots in Baguio. Horse rentals are available for a fun ride around the area.</p>
+  <p><strong>Tips:</strong> Try horseback riding early in the morning. Don't forget to visit The Mansion gate nearby for a great photo opportunity.</p>
+  <a href="map.html?spot=wright" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+<footer>
+  <p>&copy; 2026 Travel Guide | Baguio City Tourism</p>
+  <p>
+    <a href="https://www.baguio.gov.ph" target="_blank">Official Website</a> |
+    <a href="#">Back to Top</a>
+  </p>
+</footer>
+
+<script>
+  function openModal(id) {
+    document.getElementById('modal-overlay').style.display = 'block';
+    document.getElementById('modal-' + id).style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modal-overlay').style.display = 'none';
+    var modals = document.querySelectorAll('.modal');
+    for (var i = 0; i < modals.length; i++) {
+      modals[i].style.display = 'none';
+    }
+    document.body.style.overflow = 'auto';
+  }
+
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baguio Map</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<nav>
+  <div class="nav-left">
+    <img src="Logo.jpg" class="logo">
+    <span class="site-name">Baguio Guide</span>
+  </div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="map.html">Map</a>
+    <a href="review.html">Reviews</a>
+  </div>
+</nav>
+
+
+<div class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">✦ Travel Guide</span>
+    <h1>The City of <em>Pines</em> Awaits You</h1>
+    <p>Nestled in the Cordillera mountains at 1,500 meters above sea level,
+      Baguio City offers cool breezes, lush pine forests, and a rich tapestry of culture and nature to explore.</p>
+    <div class="hero-stats">
+      <div><strong>1,500m</strong><br>Elevation</div>
+      <div><strong>18°C</strong><br>Avg. Temp</div>
+      <div><strong>50+</strong><br>Attractions</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1 id="map-title">Map of Baguio</h1>
+  <p id="map-subtitle" style="text-align:center; color:#555; margin-bottom: 20px;">Showing: All of Baguio City</p>
+
+  <iframe
+    id="map-frame"
+    src="https://www.google.com/maps?q=Baguio+City&output=embed"
+    width="100%"
+    height="450"
+    style="border:none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  </iframe>
+
+  
+  <p style="text-align:center; color:#555; margin-bottom: 20px;">Use ctrl + scroll to zoom the map. </p>
+
+  <div class="spot-list">
+
+
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Travel Guide | Baguio City Tourism</p>
+  <p>
+    <a href="https://www.baguio.gov.ph" target="_blank">Official Baguio Website</a> |
+    <a href="#">Back to Top</a>
+  </p>
+</footer>
+
+<script>
+
+  var spots = {
+    nightmarket:  { name: 'Night Market',       query: 'Baguio+Night+Market+Harrison+Road+Baguio+City' },
+    burnham:      { name: 'Burnham Park',        query: 'Burnham+Park+Baguio+City' },
+    mines:        { name: 'Mines View Park',     query: 'Mines+View+Park+Baguio+City' },
+    campjohnhay:  { name: 'Camp John Hay',       query: 'Camp+John+Hay+Baguio+City' },
+    botanical:    { name: 'Botanical Garden',    query: 'Botanical+Garden+Baguio+City' },
+    strawberry:   { name: 'Strawberry Farm',     query: 'Strawberry+Farm+La+Trinidad+Benguet' },
+    bencab:       { name: 'BenCab Museum',       query: 'BenCab+Museum+Asin+Road+Tuba+Benguet' },
+    wright:       { name: 'Wright Park',         query: 'Wright+Park+Baguio+City' }
+  };
+
+  function showSpot(id) {
+    if (!spots[id]) return;
+
+    var spot = spots[id];
+    var frame = document.getElementById('map-frame');
+    var title = document.getElementById('map-title');
+    var subtitle = document.getElementById('map-subtitle');
+
+
+    frame.src = 'https://www.google.com/maps?q=' + spot.query + '&output=embed';
+
+ 
+    title.textContent = spot.name;
+    subtitle.textContent = 'Showing: ' + spot.name;
+
+ 
+    var items = document.querySelectorAll('.spot-item');
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.remove('active');
+    }
+    event.currentTarget.classList.add('active');
+
+ 
+    document.getElementById('map-frame').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  
+  window.onload = function() {
+    var params = new URLSearchParams(window.location.search);
+    var spot = params.get('spot');
+    if (spot && spots[spot]) {
+      showSpot(spot);
+
+      var items = document.querySelectorAll('.spot-item');
+      var keys = Object.keys(spots);
+      var idx = keys.indexOf(spot);
+      if (idx !== -1 && items[idx]) {
+        items[idx].classList.add('active');
+      }
+    }
+  };
+</script>
+
+</body>
+</html>
